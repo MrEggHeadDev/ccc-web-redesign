@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clearwater Central Catholic</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Unofficial redesign concept of the Clearwater Central Catholic High School homepage. Not affiliated with CCCHS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: classic school-crest serif headlines over full-bleed campus photos; red bands frame each section; gold reserved for numbers and accents. White page throughout. */
+:root {
+  --red: #b5121b;
+  --red-deep: #8c0d14;
+  --gold: #c99a2e;
+  --gold-lt: #e0b44c;
+  --ink: #1a1415;
+  --paper: #ffffff;
+  --line: #ebe3df;
+  --muted: #5d5350;
+  --card: #ffffff;
+  --display: "Libre Baskerville", Baskerville, Georgia, "Times New Roman", serif;
+  --body: "Libre Franklin", "Franklin Gothic", "Helvetica Neue", Arial, sans-serif;
+  --wrap: 1180px;
+  color-scheme: light;
+}
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { background: var(--paper); color: var(--ink); font: 400 16.5px/1.65 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: #1a1415 }
+a { color: inherit }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px }
+img { display: block; max-width: 100% }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; text-wrap: balance; margin: 0; letter-spacing: -.01em }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.eyebrow { font: italic 400 1rem/1.2 var(--display); color: var(--red) }
+.sec { padding-block: clamp(56px, 8vw, 96px) }
+.sec + .sec { border-top: 1px solid var(--line) }
+.sec-head { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; margin-bottom: 32px }
+.sec-head h2 { font-size: clamp(1.8rem, 3.8vw, 2.5rem); margin-top: 6px }
+.sec-head { border-bottom: 2px solid var(--ink); padding-bottom: 14px; align-items: center }
+.more { font-weight: 600; text-decoration: none; color: var(--red); white-space: nowrap; background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .3s }
+.more:hover { background-size: 100% 2px }
+
+/* ---------- Header ---------- */
+.utility { background: #1a1415; color: #e9dfdb; font-size: .82rem }
+.utility .wrap { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: flex-end; padding-block: 7px }
+.utility a { text-decoration: none; opacity: .85; transition: color .2s, opacity .2s }
+.utility a:hover { opacity: 1; color: var(--gold-lt) }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--red); color: #fff; box-shadow: 0 3px 0 var(--gold) }
+.bar { display: flex; align-items: center; gap: 16px; min-height: 74px }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; min-width: 0 }
+.brand .crest { width: 44px; height: 51px; background: #fff; border-radius: 6px; padding: 3px; flex: none }
+.brand .crest img { width: 100%; height: 100%; object-fit: contain }
+.brand b { font: 700 1.12rem/1.1 var(--display); display: block }
+.brand small { font-size: .76rem; opacity: .85; display: block; margin-top: 3px; letter-spacing: .02em }
+nav.main { display: flex; align-items: center; gap: 0 }
+nav.main details { position: relative }
+nav.main summary { list-style: none; cursor: pointer; font: 600 .93rem/1 var(--body); padding: 11px 10px; border-radius: 6px; display: flex; gap: 6px; align-items: center; transition: background .2s }
+nav.main summary::-webkit-details-marker { display: none }
+nav.main summary::after { content: ""; width: 5px; height: 5px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg) translateY(-2px); opacity: .8; transition: transform .2s }
+nav.main details[open] summary::after { transform: rotate(-135deg) translateY(-1px) }
+nav.main details[open] summary, nav.main summary:hover { background: var(--red-deep) }
+.drop { position: absolute; top: calc(100% + 12px); left: 0; min-width: 250px; background: var(--card); color: var(--ink); border-radius: 4px; padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.2); border-top: 3px solid var(--gold); display: grid; animation: drop .2s ease-out }
+@keyframes drop { from { opacity: 0; transform: translateY(-6px) } }
+nav.main details:nth-last-child(-n+3) .drop { left: auto; right: 0 }
+.drop a { text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: .94rem; transition: background .15s, color .15s, padding .15s }
+.drop a:hover { background: #f7f1ee; color: var(--red); padding-left: 16px }
+.cta-apply { background: var(--gold-lt); color: #1a1415; text-decoration: none; font: 700 .95rem/1 var(--body); padding: 12px 18px; border-radius: 6px; white-space: nowrap; transition: background .2s, transform .2s }
+.cta-apply:hover { background: #fff; transform: translateY(-1px) }
+.menu-btn { display: none; background: none; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 6px; font: 600 .95rem/1 var(--body); padding: 10px 14px; cursor: pointer }
+@media (max-width: 1100px) {
+  .menu-btn { display: block }
+  nav.main { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--red-deep); flex-direction: column; align-items: stretch; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); max-height: calc(100vh - 120px); overflow-y: auto }
+  nav.main.open { display: flex; animation: drop .2s ease-out }
+  nav.main summary { justify-content: space-between; padding: 15px 8px; font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,.15); border-radius: 0 }
+  nav.main details[open] summary, nav.main summary:hover { background: transparent }
+  .drop { position: static; box-shadow: none; border-top: 0; margin: 8px 0 12px; min-width: 0 }
+  .bar .cta-apply { display: none }
+}
+@media (max-width: 480px) { .brand small { display: none } .brand b { font-size: 1rem } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; background: #1a1415; color: #fff; overflow: hidden }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; animation: zoom 14s ease-out both }
+@keyframes zoom { from { transform: scale(1.08) } to { transform: scale(1) } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,20,21,.86) 0%, rgba(26,20,21,.55) 50%, rgba(26,20,21,.05) 100%) }
+.hero .wrap { position: relative; z-index: 1; padding-block: clamp(72px, 12vw, 150px) }
+.hero .motto { font: italic 400 1rem/1 var(--display); color: var(--gold-lt) }
+.hero h1 { font-size: clamp(2.5rem, 6.6vw, 4.8rem); margin-top: 16px; max-width: 13ch; line-height: 1.08 }
+.hero h1 span { color: var(--gold-lt); font-style: italic; font-weight: 400 }
+.hero p { max-width: 46ch; font-size: 1.12rem; margin: 20px 0 30px; color: #eee5e1 }
+.rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both }
+.rise.d1 { animation-delay: .12s } .rise.d2 { animation-delay: .24s } .rise.d3 { animation-delay: .36s }
+@keyframes rise { from { opacity: 0; transform: translateY(18px) } }
+.btns { display: flex; flex-wrap: wrap; gap: 12px }
+.btn { display: inline-block; text-decoration: none; font: 600 1rem/1 var(--body); padding: 15px 22px; border-radius: 6px; border: 2px solid transparent; transition: background .2s, color .2s, transform .2s, box-shadow .2s }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.18) }
+.btn.red { background: var(--red); color: #fff }
+.btn.red:hover { background: var(--red-deep) }
+.btn.ghost { border-color: rgba(255,255,255,.7); color: #fff }
+.btn.ghost:hover { background: #fff; color: #1a1415 }
+.btn.gold { background: var(--gold-lt); color: #1a1415 }
+.btn.gold:hover { background: #fff }
+
+/* ---------- Quick links ---------- */
+.quick { background: var(--red); color: #fff }
+.quick ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr) }
+.quick a { display: flex; flex-direction: column; gap: 3px; padding: 20px 18px; text-decoration: none; border-left: 1px solid rgba(255,255,255,.18); height: 100%; transition: background .2s }
+.quick li:first-child a { border-left: 0 }
+.quick a:hover { background: var(--red-deep) }
+.quick b { font: 700 1.05rem/1.2 var(--display) }
+.quick small { opacity: .85; font-size: .82rem }
+@media (max-width: 900px) { .quick ul { grid-template-columns: repeat(3, 1fr) } .quick li:nth-child(4) a { border-left: 0 } .quick li:nth-child(n+4) a { border-top: 1px solid rgba(255,255,255,.18) } }
+@media (max-width: 520px) { .quick ul { grid-template-columns: repeat(2, 1fr) } .quick li a { border-left: 0 !important; border-top: 1px solid rgba(255,255,255,.18) } .quick li:nth-child(even) a { border-left: 1px solid rgba(255,255,255,.18) !important } }
+
+/* ---------- About ---------- */
+.about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center }
+.about-grid > * { min-width: 0 }
+.about-grid h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin: 14px 0 20px }
+.about-grid h2 em { color: var(--red); font-weight: 400 }
+.about-grid p { margin: 0 0 16px; max-width: 62ch }
+.pillars { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 28px; padding: 0; list-style: none }
+.pillars li { font: 600 .88rem/1 var(--body); padding: 9px 14px; border: 1.5px solid var(--red); color: var(--red); border-radius: 999px; transition: background .2s, color .2s }
+.pillars li:hover { background: var(--red); color: #fff }
+.about-photo { margin: 0 }
+.about-photo .frame { border-radius: 4px; overflow: hidden }
+.about-photo img { aspect-ratio: 4/3; object-fit: cover; width: 100%; transition: transform .8s ease }
+.about-photo:hover img { transform: scale(1.03) }
+.about-photo figcaption { font: italic .88rem/1.4 var(--display); color: var(--muted); margin-top: 10px }
+@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr } }
+
+/* ---------- Stats ---------- */
+.stats { background: #faf6f3; border-block: 1px solid var(--line) }
+.stats .wrap { padding-block: clamp(48px, 7vw, 72px) }
+.stats h2 { font-size: clamp(1.8rem, 3.8vw, 2.5rem); margin: 6px 0 28px }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; margin: 0; padding: 0 }
+.stat-grid li { padding: 22px 24px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px }
+.stat-grid li:nth-child(3n+2), .stat-grid li:nth-child(3n+3) { border-left: 1px solid var(--line) }
+.stat-grid b { font: italic 400 clamp(2.4rem, 5.4vw, 3.4rem)/1.05 var(--display); color: var(--red); font-variant-numeric: lining-nums tabular-nums }
+.stat-grid span { font-weight: 600; font-size: .98rem }
+.stat-grid em { font-style: normal; color: var(--muted); font-size: .8rem }
+@media (max-width: 700px) { .stat-grid { grid-template-columns: repeat(2, 1fr) } .stat-grid li { border-left: 0 !important; padding-inline: 0 16px } .stat-grid li:nth-child(even) { border-left: 1px solid var(--line) !important; padding-left: 16px } }
+
+/* ---------- Explore tiles ---------- */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px 22px }
+.tile { display: block; text-decoration: none; min-width: 0 }
+.tile .ph { aspect-ratio: 4/3; max-width: 100%; overflow: hidden; border-radius: 4px; background: #eee }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease }
+.tile h3 { font-size: 1.15rem; margin-top: 14px; transition: color .2s }
+.tile p { margin: 4px 0 0; font-size: .9rem; color: var(--muted); line-height: 1.45 }
+.tile:hover img { transform: scale(1.05) }
+.tile:hover h3 { color: var(--red) }
+@media (max-width: 960px) { .tiles { grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 460px) { .tiles { grid-template-columns: 1fr } }
+
+/* ---------- Events ---------- */
+.tabs { display: inline-flex; gap: 4px }
+.tabs button { font: 600 .92rem/1 var(--body); border: 1.5px solid var(--line); background: none; color: var(--muted); padding: 10px 16px; border-radius: 3px; cursor: pointer; transition: background .2s, color .2s }
+.tabs button[aria-selected="true"] { background: var(--red); border-color: var(--red); color: #fff }
+.events { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px }
+[role="tabpanel"]:not([hidden]) .events li { animation: rise .45s ease-out both }
+[role="tabpanel"]:not([hidden]) .events li:nth-child(2) { animation-delay: .06s }
+[role="tabpanel"]:not([hidden]) .events li:nth-child(3) { animation-delay: .12s }
+.event { display: grid; grid-template-columns: 72px 1fr auto; gap: 18px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 14px 18px 14px 14px; text-decoration: none; transition: border-color .2s, transform .2s, box-shadow .2s }
+.event:hover { border-color: var(--red); background: #fdf9f7 }
+.date { text-align: center; border-radius: 8px; background: var(--red); color: #fff; padding: 9px 0 8px }
+.date b { display: block; font: italic 400 1.7rem/1.05 var(--display); font-variant-numeric: lining-nums }
+.date span { font: 600 .74rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase }
+.event h3 { font: 600 1.06rem/1.35 var(--body); letter-spacing: 0 }
+.event .meta { color: var(--muted); font-size: .9rem; margin-top: 3px }
+.chip { font: 600 .74rem/1 var(--body); padding: 6px 10px; border-radius: 999px; white-space: nowrap; border: 1.5px solid currentColor }
+.chip.today { color: var(--red) }
+.chip.tmr { color: var(--muted) }
+.sched { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; vertical-align: 1px }
+.events-foot { margin-top: 18px }
+@media (max-width: 560px) { .event { grid-template-columns: 60px 1fr; gap: 14px } .event .chip { display: none } }
+
+/* ---------- News ---------- */
+.news { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px }
+.story { display: flex; flex-direction: column; text-decoration: none; min-width: 0 }
+.story .ph { aspect-ratio: 16/10; max-width: 100%; border-radius: 4px; overflow: hidden; background: var(--red) }
+.story .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s }
+.story .ph.crest { display: grid; place-items: center; background: linear-gradient(135deg, var(--red), var(--red-deep)) }
+.story .ph.crest img { width: auto; height: 74%; object-fit: contain; background: #fff; border-radius: 4px; padding: 10px }
+.story:hover .ph img { transform: scale(1.04) }
+.story h3 { font-size: 1.3rem; margin-top: 16px; transition: color .2s }
+.story p { margin: 8px 0 0; color: var(--muted); font-size: .95rem }
+.story .read { margin-top: 10px; font-weight: 600; font-size: .92rem; color: var(--red) }
+.story:hover h3 { color: var(--red) }
+@media (max-width: 860px) { .news { grid-template-columns: 1fr; gap: 28px } .story { display: grid; grid-template-columns: 200px 1fr; gap: 0 18px } .story .ph { grid-row: span 4 } .story h3 { margin-top: 0 } }
+@media (max-width: 520px) { .story { display: flex } .story h3 { margin-top: 14px } }
+
+/* ---------- Social ---------- */
+.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px }
+.soc { display: block; text-decoration: none; min-width: 0 }
+.soc .ph { aspect-ratio: 16/10; max-width: 100%; overflow: hidden; border-radius: 4px }
+.soc img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s }
+.soc .row { display: flex; align-items: center; gap: 12px; margin-top: 14px }
+.soc svg { width: 38px; height: 38px; padding: 9px; border-radius: 50%; background: var(--red); fill: #fff; flex: none; transition: background .2s }
+.soc b { display: block; font: 700 1.1rem/1.2 var(--display) }
+.soc span { display: block; font-size: .88rem; color: var(--muted) }
+.soc:hover img { transform: scale(1.04) }
+.soc:hover svg { background: var(--red-deep) }
+.soc-extra { margin-top: 22px; color: var(--muted); font-size: .94rem }
+.soc-extra a { color: var(--red) }
+@media (max-width: 760px) { .social-grid { grid-template-columns: 1fr } }
+
+/* ---------- Visit band ---------- */
+.visit { position: relative; color: #fff; background: #1a1415; overflow: hidden }
+.visit img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover }
+.visit::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(140,13,20,.94), rgba(140,13,20,.72) 55%, rgba(26,20,21,.3)) }
+.visit .wrap { position: relative; z-index: 1; padding-block: clamp(56px, 9vw, 100px) }
+.visit .eyebrow { color: var(--gold-lt) }
+.visit h2 { font-size: clamp(2.1rem, 5vw, 3.3rem); max-width: 14ch; margin-top: 14px }
+.visit p { max-width: 48ch; margin: 14px 0 26px; font-size: 1.08rem }
+
+/* ---------- Directory + footer ---------- */
+footer { background: #1a1415; color: #d8cdc9 }
+.directory { display: grid; grid-template-columns: repeat(7, 1fr); gap: 28px 20px; padding-block: 56px 40px; border-bottom: 1px solid rgba(255,255,255,.12) }
+.directory h3 { font: 700 1rem/1.2 var(--display); color: var(--gold-lt); margin-bottom: 14px }
+.directory ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px }
+.directory a { text-decoration: none; font-size: .86rem; line-height: 1.35; transition: color .15s }
+.directory a:hover { color: #fff; text-decoration: underline }
+@media (max-width: 1080px) { .directory { grid-template-columns: repeat(4, 1fr) } }
+@media (max-width: 640px) { .directory { grid-template-columns: repeat(2, 1fr) } }
+.foot { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: flex-start; padding-block: 36px }
+.foot-brand img { width: 320px; max-width: 100% }
+.foot-brand address { font-style: normal; margin-top: 16px; line-height: 1.6; font-size: .94rem }
+.foot-brand address a { text-decoration: none; color: #fff }
+.socials { display: flex; gap: 10px; margin-top: 16px }
+.socials a { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.08); transition: background .2s, transform .2s }
+.socials a:hover { background: var(--red); transform: translateY(-2px) }
+.socials svg { width: 18px; height: 18px; fill: #fff }
+.foot-links { display: grid; gap: 8px; font-size: .9rem }
+.foot-links a { text-decoration: none }
+.foot-links a:hover { color: #fff; text-decoration: underline }
+.legal { border-top: 1px solid rgba(255,255,255,.12); padding-block: 18px; font-size: .8rem; color: #9b8e8a; display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between }
+.legal a { text-decoration: none } .legal a:hover { color: #fff }
+.concept { background: var(--gold-lt); color: #1a1415; font-size: .82rem; text-align: center }
+.concept .wrap { padding-block: 7px }
+.concept a { font-weight: 600 }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+
+/* ---------- Scroll reveal (only where supported; content stays visible otherwise) ---------- */
+@supports (animation-timeline: view()) {
+  .reveal { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 40% }
+  @keyframes reveal { from { opacity: 0; transform: translateY(28px) } to { opacity: 1; transform: none } }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17 5.8a1.1 1.1 0 1 0 0 2.3 1.1 1.1 0 0 0 0-2.3zM21.9 7.9c-.1-1.5-.4-2.9-1.5-4s-2.5-1.4-4-1.5C14.8 2.3 9.2 2.3 7.6 2.4c-1.5.1-2.9.4-4 1.5S2.2 6.4 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.5.4 2.9 1.5 4s2.5 1.4 4 1.5c1.6.1 7.2.1 8.8 0 1.5-.1 2.9-.4 4-1.5s1.4-2.5 1.5-4c.1-1.6.1-6.6 0-8.2zm-2 9.9a3.2 3.2 0 0 1-1.8 1.8c-1.3.5-4.3.4-5.7.4s-4.4.1-5.7-.4a3.2 3.2 0 0 1-1.8-1.8c-.5-1.3-.4-4.3-.4-5.7s-.1-4.4.4-5.7A3.2 3.2 0 0 1 6.7 4.6C8 4.1 11 4.2 12.4 4.2s4.4-.1 5.7.4a3.2 3.2 0 0 1 1.8 1.8c.5 1.3.4 4.3.4 5.7s.1 4.4-.4 5.7z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path d="M6.9 21H3.2V9h3.7v12zM5 7.4a2.1 2.1 0 1 1 0-4.3 2.1 2.1 0 0 1 0 4.3zM21 21h-3.7v-5.8c0-1.4 0-3.2-2-3.2s-2.2 1.5-2.2 3.1V21H9.4V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.4 2.5 4.4 5.6V21z"/></symbol>
+</svg>
+
+<a class="sr" href="#main">Skip to main content</a>
+
+<div class="concept"><div class="wrap">Unofficial redesign concept, not affiliated with Clearwater Central Catholic High School. Visit the official site at <a href="https://www.ccchs.org/" target="_blank" rel="noopener">ccchs.org</a>.</div></div>
+
+<div class="utility">
+  <div class="wrap">
+    <a href="https://www.ccchs.org/apps/events" target="_blank" rel="noopener">Calendar</a>
+    <a href="https://www.ccchs.org/apps/staff/" target="_blank" rel="noopener">Staff Directory</a>
+    <a href="https://www.ccchs.org/apps/bell_schedules/" target="_blank" rel="noopener">Bell Schedule</a>
+    <a href="https://gofan.co/app/school/FL5818" target="_blank" rel="noopener">Tickets</a>
+    <a href="https://www.ccchs.org/apps/search" target="_blank" rel="noopener">Search</a>
+    <a href="https://www.ccchs.org/apps/contact" target="_blank" rel="noopener">Contact</a>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="https://www.ccchs.org/" target="_blank" rel="noopener">
+      <span class="crest"><img src="img/logo.png" alt="CCC crest"></span>
+      <span><b>Clearwater Central Catholic</b><small>High School · Marauders</small></span>
+   </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <details><summary>About</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421481" target="_blank" rel="noopener">Who We Are</a>
+        <a href="https://www.ccchs.org/apps/maps/" target="_blank" rel="noopener">Campus</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421493" target="_blank" rel="noopener">History</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421502" target="_blank" rel="noopener">Leadership</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421510" target="_blank" rel="noopener">Advisory Board</a>
+        <a href="https://www.ccchs.org/apps/staff/" target="_blank" rel="noopener">Faculty &amp; Staff</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2424404" target="_blank" rel="noopener">Careers</a>
+        <a href="https://www.ccchs.org/apps/news/category/19993" target="_blank" rel="noopener">News</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421541" target="_blank" rel="noopener">Tolle Lege Magazine</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421490" target="_blank" rel="noopener">School Profile</a>
+      </div></details>
+      <details><summary>Admissions</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421550" target="_blank" rel="noopener">Admissions</a>
+        <a href="https://ccchs-fl.client.renweb.com/oa/?memberid=15127" target="_blank" rel="noopener">Apply Now</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421555" target="_blank" rel="noopener">Visit</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421563" target="_blank" rel="noopener">Admissions Process</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421566" target="_blank" rel="noopener">Enrollment Process</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421569" target="_blank" rel="noopener">Tuition &amp; Financial Aid</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421627" target="_blank" rel="noopener">International Students</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421666" target="_blank" rel="noopener">Admissions Contacts</a>
+      </div></details>
+      <details><summary>Academics</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421669" target="_blank" rel="noopener">Graduate Profile</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421692" target="_blank" rel="noopener">International Baccalaureate</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421696" target="_blank" rel="noopener">Center for Entrepreneurship &amp; Innovation</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421697" target="_blank" rel="noopener">Student Support Services</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421698" target="_blank" rel="noopener">School Counseling</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421699" target="_blank" rel="noopener">Travel Experiences</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421701" target="_blank" rel="noopener">Academic Honorees</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421844" target="_blank" rel="noopener">Course Catalog</a>
+        <a href="https://www.ccchs.org/apps/departments/index.jsp?show=TDE" target="_blank" rel="noopener">Departments</a>
+        <a href="https://www.ccchs.org/apps/bell_schedules/" target="_blank" rel="noopener">Bell Schedule</a>
+      </div></details>
+      <details><summary>Athletics</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690513&type=d&pREC_ID=2421846" target="_blank" rel="noopener">Marauder Methodology</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421890" target="_blank" rel="noopener">Teams</a>
+        <a href="https://gofan.co/app/school/FL5818" target="_blank" rel="noopener">Get Tickets</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690537&type=d&pREC_ID=2421851" target="_blank" rel="noopener">Tradition of Excellence</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421887" target="_blank" rel="noopener">Spirit Store</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421873" target="_blank" rel="noopener">Boosters</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421888" target="_blank" rel="noopener">Athletic Forms</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2755160" target="_blank" rel="noopener">Team Shops</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421893" target="_blank" rel="noopener">Summer Camps</a>
+      </div></details>
+      <details><summary>Student Life</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421896" target="_blank" rel="noopener">Campus Ministry</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421902" target="_blank" rel="noopener">Traditions</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421903" target="_blank" rel="noopener">Co-Curriculars</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421907" target="_blank" rel="noopener">Volunteer Service</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421911" target="_blank" rel="noopener">Honor Societies</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690871&type=d&pREC_ID=2421914" target="_blank" rel="noopener">Fine Arts</a>
+      </div></details>
+      <details><summary>Parents</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2421918" target="_blank" rel="noopener">Parent Involvement</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690964&type=d&pREC_ID=2421919" target="_blank" rel="noopener">Expectations &amp; Handbook</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2421922" target="_blank" rel="noopener">Charitable Tuition Partnership</a>
+        <a href="https://www.ccchs.org/apps/links/" target="_blank" rel="noopener">Resources &amp; Links</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2600257" target="_blank" rel="noopener">New Family Resource Guide</a>
+      </div></details>
+      <details><summary>Alumni</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421925" target="_blank" rel="noopener">Alumni</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421926" target="_blank" rel="noopener">Alumni Events</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421927" target="_blank" rel="noopener">Get Involved</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421928" target="_blank" rel="noopener">Class Reunions</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421929" target="_blank" rel="noopener">Distinguished Alumni Awards</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690537&type=d&pREC_ID=2421852" target="_blank" rel="noopener">Hall of Fame</a>
+      </div></details>
+      <details><summary>Giving</summary><div class="drop">
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2421934" target="_blank" rel="noopener">Support CCC</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422077" target="_blank" rel="noopener">Special Events</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422109" target="_blank" rel="noopener">Capital Campaign</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422116" target="_blank" rel="noopener">Annual Report</a>
+        <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422119" target="_blank" rel="noopener">Advancement Contacts</a>
+        <a href="https://givebutter.com/2026-2027-central-catholic-fund-yzdxsy" target="_blank" rel="noopener">Donate Now</a>
+      </div></details>
+    </nav>
+    <a class="cta-apply" href="https://ccchs-fl.client.renweb.com/oa/?memberid=15127" target="_blank" rel="noopener">Apply</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-h">
+  <img src="img/hero.jpg" alt="A girl in a red CCC polo and a boy in a black CCC polo look up from their iPads with smiles">
+  <div class="wrap">
+    <div class="motto rise">Tolle Lege · Take up and read</div>
+    <h1 id="hero-h" class="rise d1">Where possibility &amp; <span>opportunity</span> meet</h1>
+    <p class="rise d2">A private, Catholic, college-preparatory IB World School on a 40-acre campus in Clearwater, Florida.</p>
+    <div class="btns rise d3">
+      <a class="btn red" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421555" target="_blank" rel="noopener">Schedule a Visit</a>
+      <a class="btn ghost" href="https://ccchs-fl.client.renweb.com/oa/?memberid=15127" target="_blank" rel="noopener">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<nav class="quick" aria-label="Quick links">
+  <ul>
+    <li><a href="https://www.ccchs.org/apps/events" target="_blank" rel="noopener"><b>Calendar</b><small>Dates &amp; schedules</small></a></li>
+    <li><a href="https://www.ccchs.org/apps/news" target="_blank" rel="noopener"><b>News</b><small>Marauder stories</small></a></li>
+    <li><a href="https://gofan.co/app/school/FL5818" target="_blank" rel="noopener"><b>Tickets</b><small>Games on GoFan</small></a></li>
+    <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421569" target="_blank" rel="noopener"><b>Tuition</b><small>&amp; financial aid</small></a></li>
+    <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421887" target="_blank" rel="noopener"><b>Spirit Store</b><small>Gear up</small></a></li>
+    <li><a href="https://givebutter.com/2026-2027-central-catholic-fund-yzdxsy" target="_blank" rel="noopener"><b>Donate</b><small>Central Catholic Fund</small></a></li>
+  </ul>
+</nav>
+
+<section class="sec" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">About Us</div>
+      <h2 id="about-h">Minds for truth, hearts for love, <em>hands for service.</em></h2>
+      <p>As a private college-preparatory school in the Diocese of St. Petersburg, Clearwater Central Catholic High School is committed to educating our students with the ideals of “minds for truth, hearts for love, and hands for service.”</p>
+      <p>Our distinctive and focused academic program inspires students to fully develop their moral, physical, spiritual, intellectual, and creative potential, as well as learn to respect diversity in the world around them.</p>
+            <div class="btns">
+        <a class="btn red" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421481" target="_blank" rel="noopener">Who We Are</a>
+        <a class="more" style="align-self:center" href="https://www.ccchs.org/apps/spotlightmessages/16796" target="_blank" rel="noopener">Read the full message</a>
+      </div>
+    </div>
+    <figure class="about-photo reveal">
+      <div class="frame"><img src="img/campus2.jpg" alt="The Center for the Arts on the CCC campus, with a brick courtyard and white columns"></div>
+      <figcaption>Center for the Arts, 2750 Haines Bayshore Road</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="stats" aria-labelledby="stats-h">
+  <div class="wrap">
+    <h2 id="stats-h">CCC at a glance</h2>
+    <ul class="stat-grid reveal">
+      <li><b data-count="100" data-suffix="%">100%</b><span>Graduation rate</span></li>
+      <li><b data-count="100" data-suffix="%">100%</b><span>College acceptance rate</span></li>
+      <li><b data-count="37" data-suffix="">37</b><span>Athletic team state titles</span></li>
+      <li><b data-count="67" data-suffix="%">67%</b><span>IB Diploma Program enrollment</span><em>Average of current 11th &amp; 12th grades</em></li>
+      <li><b>13:1</b><span>Student-to-teacher ratio</span></li>
+      <li><b data-count="563" data-suffix="">563</b><span>Students enrolled</span><em>Next year</em></li>
+      <li><b data-count="40" data-suffix="">40</b><span>Acre campus</span></li>
+      <li><b data-count="8" data-suffix="">8</b><span>Academic honor societies</span></li>
+      <li><b>1:1</b><span>Student-to-iPad ratio</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="explore-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="explore-h">Explore CCC</h2>
+    </div>
+    <div class="tiles">
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421481" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/aerial.jpg" alt="Bird's eye view of campus from the south, overlooking the football field with academic buildings in the background"></div>
+        <h3>Who We Are</h3><p>Mission, history and leadership</p></a>
+      <a class="tile reveal" href="https://maps.app.goo.gl/7R6Xehq9aqEWssyx5" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/campus1.jpg" alt="Aerial night view of the lit Marauders football field"></div>
+        <h3>Where We Are</h3><p>2750 Haines Bayshore Rd, Clearwater</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/coursecatalog" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/lab.jpg" alt="Four students in red polos and lab aprons mix solutions around a lab table"></div>
+        <h3>World-Class Academics</h3><p>Course catalog and departments</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/IB" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/ib.jpg" alt="A large group of students use iPads in pairs"></div>
+        <h3>International Baccalaureate</h3><p>The IB Diploma Programme</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421890" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/athletes.jpg" alt="Collage of Marauder athletes: cross country runner, soccer player, football kicker, baseball pitcher, cheerleader, basketball player and golfer"></div>
+        <h3>Outstanding Athletics</h3><p>Teams, schedules and tickets</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421902" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/studentlife.jpg" alt="Three students smiling in black and red polos"></div>
+        <h3>Student Life</h3><p>Traditions, clubs and service</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421903" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/media.jpg" alt="Two students at a table with microphones while a third films them with a video camera"></div>
+        <h3>Hands-On Learning</h3><p>Co-curricular programs</p></a>
+      <a class="tile reveal" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421896" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/ministry.jpg" alt="A student leads prayer at a podium in the chapel"></div>
+        <h3>Campus Ministry</h3><p>Mass, retreats and prayer</p></a>
+    </div>
+  
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="events-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="events-h">Upcoming Events</h2>
+      <div class="tabs" role="tablist" aria-label="Event calendars">
+        <button role="tab" id="tab-school" aria-selected="true" aria-controls="panel-school">School</button>
+        <button role="tab" id="tab-ath" aria-selected="false" aria-controls="panel-ath">Athletics</button>
+      </div>
+    </div>
+
+    <div role="tabpanel" id="panel-school" aria-labelledby="tab-school">
+      <ul class="events">
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/9/47503074/?REC_ID=47503074&id=0&d=2026-11-9" target="_blank" rel="noopener">
+          <div class="date"><b>9</b><span>Nov</span></div>
+          <div><h3><span class="sched" style="background:#e57a1f"></span>Orange Schedule</h3><div class="meta">Monday bell schedule</div></div>
+          <span class="chip today">Today</span></a></li>
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/9/44084915/?REC_ID=44084915&id=0&d=2026-11-9" target="_blank" rel="noopener">
+          <div class="date"><b>9</b><span>Nov</span></div>
+          <div><h3>2026 CCCHS Thanksgiving Food Drive</h3><div class="meta">Carline · 7:15 – 7:45 AM</div></div>
+          <span class="chip today">Today</span></a></li>
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/10/60760841/?REC_ID=60760841&id=0&d=2026-11-10" target="_blank" rel="noopener">
+          <div class="date"><b>10</b><span>Nov</span></div>
+          <div><h3><span class="sched" style="background:var(--red)"></span>Red Schedule</h3><div class="meta">Tuesday bell schedule</div></div>
+          <span class="chip tmr">Tomorrow</span></a></li>
+      </ul>
+      <div class="events-foot"><a class="more" href="https://www.ccchs.org/apps/events/?id=0" target="_blank" rel="noopener">Full school calendar</a></div>
+    </div>
+
+    <div role="tabpanel" id="panel-ath" aria-labelledby="tab-ath" hidden>
+      <ul class="events">
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/9/58499122/?REC_ID=58499122&id=1" target="_blank" rel="noopener">
+          <div class="date"><b>9</b><span>Nov</span></div>
+          <div><h3>Boys Soccer @ Cardinal Mooney</h3><div class="meta">7:30 – 9:30 PM · Cardinal Mooney High School</div></div>
+          <span class="chip today">Today</span></a></li>
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/10/58541177/?REC_ID=58541177&id=1" target="_blank" rel="noopener">
+          <div class="date"><b>10</b><span>Nov</span></div>
+          <div><h3>Girls Soccer @ Largo</h3><div class="meta">5 – 7 PM · Largo High School</div></div>
+          <span class="chip tmr">Tomorrow</span></a></li>
+        <li><a class="event" href="https://www.ccchs.org/apps/events/2026/11/10/58493491/?REC_ID=58493491&id=1" target="_blank" rel="noopener">
+          <div class="date"><b>10</b><span>Nov</span></div>
+          <div><h3>CCC Pre-Season Tournament (Girls Basketball)</h3><div class="meta">6 – 9:30 PM</div></div>
+          <span class="chip tmr">Tomorrow</span></a></li>
+      </ul>
+      <div class="events-foot"><a class="more" href="https://www.ccchs.org/apps/events/?id=1" target="_blank" rel="noopener">Full athletics calendar</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a class="more" href="https://gofan.co/app/school/FL5818" target="_blank" rel="noopener">Buy tickets</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="news-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="news-h">Recent News</h2>
+      <a class="more" href="https://www.ccchs.org/apps/news/" target="_blank" rel="noopener">All news</a>
+    </div>
+    <div class="news">
+      <a class="story reveal" href="https://www.ccchs.org/apps/news/article/2233248?categoryId=19993" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/banksy.jpg" alt="25 students in red CCC uniforms smile in front of a Banksy mural"></div>
+        <h3>From Classroom to Canvas</h3>
+        <p>Students take their learning beyond the classroom, in front of a Banksy mural.</p>
+        <span class="read">Read story</span></a>
+      <a class="story reveal" href="https://www.ccchs.org/apps/news/article/2212331?categoryId=19993" target="_blank" rel="noopener">
+        <div class="ph crest"><img src="img/logo.png" alt=""></div>
+        <h3>Honoring a Hero, Inspiring a Generation</h3>
+        <p>A story of service and the example it sets for today’s Marauders.</p>
+        <span class="read">Read story</span></a>
+      <a class="story reveal" href="https://www.ccchs.org/apps/news/article/2208738?categoryId=19993" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/capitol.jpg" alt="Five smiling students in purple polo shirts on the Florida House floor"></div>
+        <h3>From Citizen Marauders to Stateswomen</h3>
+        <p>Five CCC students step onto the floor of the Florida Legislature.</p>
+        <span class="read">Read story</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="social-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="social-h">Social Life</h2>
+    </div>
+    <div class="social-grid">
+      <a class="soc reveal" href="https://www.facebook.com/CCCHSMarauders" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/studentlife.jpg" alt=""></div>
+        <div class="row"><svg aria-hidden="true"><use href="#i-fb"/></svg><div><b>Facebook</b><span>@CCCHSMarauders</span></div></div></a>
+      <a class="soc reveal" href="https://www.instagram.com/ccchsmarauders/" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/ministry.jpg" alt=""></div>
+        <div class="row"><svg aria-hidden="true"><use href="#i-ig"/></svg><div><b>Instagram</b><span>@ccchsmarauders</span></div></div></a>
+      <a class="soc reveal" href="https://x.com/CCCMarauders" target="_blank" rel="noopener">
+        <div class="ph"><img src="img/campus1.jpg" alt=""></div>
+        <div class="row"><svg aria-hidden="true"><use href="#i-x"/></svg><div><b>Marauder Athletics</b><span>@CCCMarauders on X</span></div></div></a>
+    </div>
+    <p class="soc-extra">Alumni can also connect through the <a href="https://www.linkedin.com/groups?gid=5062558&trk=my_groups-b-grp-v" target="_blank" rel="noopener">CCC LinkedIn group</a>.</p>
+  </div>
+</section>
+
+<section class="visit" aria-labelledby="visit-h">
+  <img src="img/aerial.jpg" alt="">
+  <div class="wrap">
+    <div class="eyebrow">Admissions</div>
+    <h2 id="visit-h">Visit our campus</h2>
+    <p>Tours are offered throughout the year. Contact the Admissions Office to schedule a visit or learn about applying for the 2027–28 school year.</p>
+    <div class="btns">
+      <a class="btn gold" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421555" target="_blank" rel="noopener">Plan a Visit</a>
+      <a class="btn ghost" href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421563" target="_blank" rel="noopener">Admissions Process</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap directory" id="directory">
+    <div><h3>About</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421481" target="_blank" rel="noopener">Who We Are</a></li>
+      <li><a href="https://www.ccchs.org/apps/maps/" target="_blank" rel="noopener">Campus</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421493" target="_blank" rel="noopener">History</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421502" target="_blank" rel="noopener">Leadership</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421510" target="_blank" rel="noopener">Advisory Board</a></li>
+      <li><a href="https://www.ccchs.org/apps/staff/" target="_blank" rel="noopener">Faculty &amp; Staff</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2424404" target="_blank" rel="noopener">Careers</a></li>
+      <li><a href="https://www.ccchs.org/apps/news/category/19993" target="_blank" rel="noopener">News</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2421541" target="_blank" rel="noopener">Tolle Lege Magazine</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688689&type=d&pREC_ID=2421490" target="_blank" rel="noopener">School Profile</a></li>
+    </ul></div>
+    <div><h3>Admissions</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421550" target="_blank" rel="noopener">Admissions</a></li>
+      <li><a href="https://ccchs-fl.client.renweb.com/oa/?memberid=15127" target="_blank" rel="noopener">Apply Now</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421555" target="_blank" rel="noopener">Visit</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421563" target="_blank" rel="noopener">Admissions Process</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421566" target="_blank" rel="noopener">Enrollment Process</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421569" target="_blank" rel="noopener">Tuition &amp; Financial Aid</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421627" target="_blank" rel="noopener">International Students</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689028&type=d&pREC_ID=2421666" target="_blank" rel="noopener">Admissions Contacts</a></li>
+    </ul></div>
+    <div><h3>Academics</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421669" target="_blank" rel="noopener">Graduate Profile</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421692" target="_blank" rel="noopener">International Baccalaureate</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421696" target="_blank" rel="noopener">Entrepreneurship &amp; Innovation</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421697" target="_blank" rel="noopener">Student Support Services</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421698" target="_blank" rel="noopener">School Counseling</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421699" target="_blank" rel="noopener">Travel Experiences</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421701" target="_blank" rel="noopener">Academic Honorees</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3689457&type=d&pREC_ID=2421844" target="_blank" rel="noopener">Course Catalog</a></li>
+      <li><a href="https://www.ccchs.org/apps/departments/index.jsp?show=TDE" target="_blank" rel="noopener">Departments</a></li>
+      <li><a href="https://www.ccchs.org/apps/bell_schedules/" target="_blank" rel="noopener">Bell Schedule</a></li>
+    </ul></div>
+    <div><h3>Athletics</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690513&type=d&pREC_ID=2421846" target="_blank" rel="noopener">Marauder Methodology</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421890" target="_blank" rel="noopener">Teams</a></li>
+      <li><a href="https://gofan.co/app/school/FL5818" target="_blank" rel="noopener">Get Tickets</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690537&type=d&pREC_ID=2421851" target="_blank" rel="noopener">Tradition of Excellence</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421887" target="_blank" rel="noopener">Spirit Store</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421873" target="_blank" rel="noopener">Boosters</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421888" target="_blank" rel="noopener">Athletic Forms</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2755160" target="_blank" rel="noopener">Team Shops</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690756&type=d&pREC_ID=2421893" target="_blank" rel="noopener">Summer Camps</a></li>
+    </ul></div>
+    <div><h3>Student Life</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421896" target="_blank" rel="noopener">Campus Ministry</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421902" target="_blank" rel="noopener">Traditions</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421903" target="_blank" rel="noopener">Co-Curriculars</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421907" target="_blank" rel="noopener">Volunteer Service</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690845&type=d&pREC_ID=2421911" target="_blank" rel="noopener">Honor Societies</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690871&type=d&pREC_ID=2421914" target="_blank" rel="noopener">Fine Arts</a></li>
+    </ul></div>
+    <div><h3>Parents</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2421918" target="_blank" rel="noopener">Parent Involvement</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690964&type=d&pREC_ID=2421919" target="_blank" rel="noopener">Expectations &amp; Handbook</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2421922" target="_blank" rel="noopener">Charitable Tuition Partnership</a></li>
+      <li><a href="https://www.ccchs.org/apps/links/" target="_blank" rel="noopener">Resources &amp; Links</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690906&type=d&pREC_ID=2600257" target="_blank" rel="noopener">New Family Resource Guide</a></li>
+    </ul></div>
+    <div><h3>Alumni &amp; Giving</h3><ul>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421925" target="_blank" rel="noopener">Alumni</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421926" target="_blank" rel="noopener">Alumni Events</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421927" target="_blank" rel="noopener">Get Involved</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421928" target="_blank" rel="noopener">Class Reunions</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691063&type=d&pREC_ID=2421929" target="_blank" rel="noopener">Distinguished Alumni Awards</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3690537&type=d&pREC_ID=2421852" target="_blank" rel="noopener">Hall of Fame</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2421934" target="_blank" rel="noopener">Support CCC</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422077" target="_blank" rel="noopener">Special Events</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422109" target="_blank" rel="noopener">Capital Campaign</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422116" target="_blank" rel="noopener">Annual Report</a></li>
+      <li><a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3691086&type=d&pREC_ID=2422119" target="_blank" rel="noopener">Advancement Contacts</a></li>
+    </ul></div>
+  </div>
+
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <img src="img/footlogo.png" alt="Clearwater Central Catholic High School · Where Possibility &amp; Opportunity Meet · IB World School">
+      <address>
+        <a href="https://www.ccchs.org/apps/maps" target="_blank" rel="noopener">2750 Haines Bayshore Road<br>Clearwater, FL 33760</a><br>
+        Phone: <a href="tel:+17275311449">(727) 531-1449</a>
+      </address>
+      <div class="socials">
+        <a href="https://www.facebook.com/CCCHSMarauders/" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="https://www.instagram.com/ccchsmarauders/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://twitter.com/CCCMarauders" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg><use href="#i-x"/></svg></a>
+        <a href="https://www.linkedin.com/groups?gid=5062558&trk=my_groups-b-grp-v" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="https://www.ccchs.org/apps/events" target="_blank" rel="noopener">Calendar</a>
+      <a href="https://www.ccchs.org/apps/staff" target="_blank" rel="noopener">Staff Directory</a>
+      <a href="https://www.ccchs.org/apps/news" target="_blank" rel="noopener">News</a>
+      <a href="https://www.ccchs.org/apps/contact" target="_blank" rel="noopener">Contact Us</a>
+      <a href="https://www.ccchs.org/apps/pages/index.jsp?uREC_ID=3688767&type=d&pREC_ID=2424404" target="_blank" rel="noopener">Employment</a>
+      <a href="https://givebutter.com/2026-2027-central-catholic-fund-yzdxsy" target="_blank" rel="noopener">Donate</a>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <span>Unofficial design concept. Photos, logos and content © Clearwater Central Catholic High School.</span>
+    <span><a href="https://www.ccchs.org/" target="_blank" rel="noopener">Notice of Non-Discrimination</a> · <a href="http://admin.ccchs.org" target="_blank" rel="noopener">Staff Login</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('mainNav');
+  var btn = document.getElementById('menuBtn');
+  var items = nav.querySelectorAll('details');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Close' : 'Menu';
+  });
+  items.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) items.forEach(function (o) { if (o !== d) o.open = false; });
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && e.target !== btn) items.forEach(function (d) { d.open = false; });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') items.forEach(function (d) { d.open = false; });
+  });
+
+  var tabs = [['tab-school', 'panel-school'], ['tab-ath', 'panel-ath']];
+  tabs.forEach(function (pair) {
+    document.getElementById(pair[0]).addEventListener('click', function () {
+      tabs.forEach(function (p) {
+        var on = p[0] === pair[0];
+        document.getElementById(p[0]).setAttribute('aria-selected', on);
+        document.getElementById(p[1]).hidden = !on;
+      });
+    });
+  });
+
+  // Count-up on the stats, starting from their real values so the page reads correctly at rest
+  var nums = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        var el = en.target, end = +el.dataset.count, suf = el.dataset.suffix, t0 = null;
+        function step(t) {
+          if (!t0) t0 = t;
+          var k = Math.min((t - t0) / 1100, 1), e = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(end * e) + suf;
+          if (k < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: .6 });
+    nums.forEach(function (n) { io.observe(n); });
+  }
+})();
+</script>
+
+</body>
+</html>
